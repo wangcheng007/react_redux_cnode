@@ -1,0 +1,27 @@
+.login{
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	width: 100%;
+	flex-direction:column;
+	padding:150px 0 0 0;
+}
+
+.login input{
+	width:60%;
+	height:45px;
+	border-radius: 5px;
+	border:2px solid #f65f57;
+	margin-bottom: 15px;
+}
+
+.loginsubmit{
+	text-align: center;
+	background-color: #f65f57;
+	width:60%;
+	height:45px;
+	border-radius: 5px;
+	line-height: 45px;
+	color: white;
+	font-size:24px;
+}
