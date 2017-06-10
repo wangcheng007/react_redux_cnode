@@ -1,0 +1,22 @@
+.loading{
+	width:100%;
+	height:60px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.loading i {
+	animation: rotate-forever 1s infinite linear;
+	font-size: 40px;
+	display: block;
+}
+
+@keyframes rotate-forever {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}

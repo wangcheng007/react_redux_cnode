@@ -1,0 +1,48 @@
+.content {
+    overflow: hidden;
+    padding: 15px;
+    line-height: 24px;
+    font-size: 13px;
+}
+
+.user{
+	position: relative;
+    padding: 10px;
+    line-height: 20px;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.user .iconfont{
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+}
+
+.headimg{
+	width: 60px;
+	height: 60px;
+}
+
+.headimg img{
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+.commentsheader{
+	width: 100%;
+	height:40px;
+	background-color: #eee;
+    display: flex;
+    align-items:center;
+    padding-left: 15px;
+}
+
+.topictitle{
+    background: #eee;
+    padding: 10px;
+}
