@@ -1,5 +1,6 @@
 export function personalInfo(state = {
 	loginname: "",
+	uid: "",
 	accesstoken: ""
 }, action) {
 	switch (action.type) {
@@ -8,12 +9,14 @@ export function personalInfo(state = {
 			// window.localStorage.accesstoken = action.accesstoken;
 			return {
 				loginname: action.loginname,
+				uid: action.uid,
 				accesstoken: action.accesstoken
 			};
 		case "SIGNOUT":
 			// window.localStorage.clear();
 			return {
 				loginname: "",
+				uid: "",
 				accesstoken: ""
 			};
 		default:

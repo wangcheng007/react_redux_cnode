@@ -4,6 +4,7 @@ import Article from '../../component/Article/index.jsx';
 import Loading from '../../component/Loading/index.jsx';
 import ReplyList from './subpage/ReplyList.jsx';
 import { getTopicDetailAction } from '../../action/getTopicDetailAction.js';
+import { updateDataAction } from '../../action/getTopicDetailAction.js';
 import { getTopicDetail } from '../../data/topicdetail/topicdetail.js';
 
 class TopicDetail extends React.Component {
@@ -27,14 +28,20 @@ class TopicDetail extends React.Component {
 		if (!this.props.loadMsg) {
 			message = <Loading></Loading>
 		}else{
+			for(var i = 0; i < this.props.data.replies.length; i++){
+				this.props.data.replies[i].display = "none";
+			}
 			message = (
 				<div>
 					<Article data={this.props.data}></Article>
 					<ReplyList
-						data={this.props.data}
-						accesstoken={this.props.accesstoken}
-						loadTopicID={this.props.loadTopicID}
-						loadTopicDetailFn={this.props.getTopicDetailData}
+							data={this.props.data}
+							accesstoken={this.props.accesstoken}
+							loadTopicID={this.props.loadTopicID}
+							loadTopicDetailFn={this.props.getTopicDetailData}
+							updateDataFn={this.props.updateData}
+							uid={this.props.uid}
+							loginname={this.props.loginname}
 						/>
 				</div>
 			);
@@ -51,7 +58,9 @@ const mapStateToProps = (state) => {
 		data: state.topicDetail.data,
 		loadMsg: state.topicDetail.loadMsg,
 		loadTopicID: state.topicDetail.loadTopicID,
-		accesstoken: state.personalInfo.accesstoken
+		accesstoken: state.personalInfo.accesstoken,
+		uid: state.personalInfo.uid,
+		loginname: state.personalInfo.loginname
 	}
 }
 
@@ -59,6 +68,10 @@ const mapDispatchToProps = (dispatch, getState) => {
 	return {
 		getTopicDetailData: (data, loadMsg, loadTopicID) => {
 			dispatch(getTopicDetailAction(data, loadMsg, loadTopicID))
+		},
+
+		updateData: (data) =>{
+			dispatch(updateDataAction(data))
 		}
 	}
 }

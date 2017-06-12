@@ -6,3 +6,10 @@ export function getTopicDetailAction(data, loadMsg, loadTopicID) {
 		loadTopicID
 	};
 }
+
+export function updateDataAction(data) {
+	return {
+		type: "UPDATE_TOPIC_DATA",
+		data
+	};
+}

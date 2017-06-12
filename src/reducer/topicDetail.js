@@ -10,6 +10,12 @@ export function topicDetail(state = {
 				loadMsg: action.loadMsg,
 				loadTopicID: action.loadTopicID
 			};
+		case "UPDATE_TOPIC_DATA":
+			return {
+				data: action.data,
+				loadMsg: state.loadMsg,
+				loadTopicID: state.loadTopicID
+			}
 		default:
 			return state;
 	}

@@ -1,7 +1,8 @@
-export function login(loginname, accesstoken) {
+export function login(loginname, uid, accesstoken) {
 	return {
 		type: "LOGIN",
 		loginname,
+		uid,
 		accesstoken
 	};
 }

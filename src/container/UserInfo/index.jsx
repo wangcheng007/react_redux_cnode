@@ -26,7 +26,7 @@ class UserInfo extends React.Component {
 			}
 			return res.json();
 		}).then((json) => {
-			this.props.login(json.loginname, accesstoken);
+			this.props.login(json.loginname, json.id, accesstoken);
 		});
 	}
 
@@ -59,8 +59,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
 	return {
-		login: (loginname, id) => {
-			dispatch(login(loginname, id));
+		login: (loginname, uid, accesstoken) => {
+			dispatch(login(loginname, uid, accesstoken));
 		}
 	}
 }
