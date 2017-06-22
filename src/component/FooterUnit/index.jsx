@@ -20,7 +20,28 @@ class FooterUnit extends React.Component {
 					</IndexLink>
 				</li>
 			)
-		} else {
+		} else if(this.props.targetTo === "message"){
+			if(this.props.unread == 0){
+				return (
+					<li>
+						<Link to={to} activeStyle={{backgroundColor: 'red'}}>
+							<i className={'iconfont icon-' + this.props.targetTo}></i>
+							<a>{this.props.children}</a>
+						</Link>
+					</li>
+				)
+			}else{
+				return (
+					<li>
+						<Link to={to} activeStyle={{backgroundColor: 'red'}}>
+							<i className={'iconfont icon-' + this.props.targetTo}></i>
+							<div className="unread">{this.props.unread == 0?"":this.props.unread}</div>
+							<a>{this.props.children}</a>
+						</Link>
+					</li>
+				)
+			}
+		}else{
 			return (
 				<li>
 					<Link to={to} activeStyle={{backgroundColor: 'red'}}>

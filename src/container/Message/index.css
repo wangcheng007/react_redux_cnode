@@ -1,0 +1,50 @@
+.messageList {
+	margin:10px 10px 0 10px;
+}
+
+.messageList .unreadmessage{
+	display: flex;
+	padding: 10px 0;
+	margin: 0 10px;
+	border-bottom: 1px solid #adadad;
+}
+
+.messageList .unreadmessage .imgContent{
+	flex:1;
+	margin-right: 10px;
+}
+
+.messageList .unreadmessage .imgContent img{
+	border-radius: 50%;
+}
+
+.messageList .unreadmark{
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: red;
+}
+
+.messageList .unreadmessage .replyContent{
+	flex:5;
+}
+
+.messageList .readedmessage{
+	display: flex;
+	padding: 10px 0;
+	margin: 0 10px;
+	border-bottom: 1px solid #adadad;
+}
+
+.messageList .readedmessage .imgContent{
+	flex:1;
+	margin-right: 10px;
+}
+
+.messageList .readedmessage .imgContent img{
+	border-radius: 50%;
+}
+
+.messageList .readedmessage .replyContent{
+	flex:5;
+}

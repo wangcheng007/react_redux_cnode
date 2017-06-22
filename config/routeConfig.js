@@ -13,7 +13,7 @@ import {
 import FooterNav from "../src/component/FooterNav/index.jsx";
 import App from "../src/component/App/index.jsx";
 import Published from "../src/container/Published/index.jsx";
-import Message from "../src/container/Message/Message";
+import Message from "../src/container/Message/index.jsx";
 import UserInfo from "../src/container/UserInfo/index.jsx";
 import TopicDetail from "../src/container/TopicDetail/index.jsx";
 import UserView from "../src/container/UserView/index.jsx";

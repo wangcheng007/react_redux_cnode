@@ -85,6 +85,17 @@ class Header extends React.Component {
 						</div>
 					);
 				break;
+				case "message":
+				content=(
+						<div className="header">
+							<div className="icon" onClick={hashHistory.goBack}>
+								<i className="iconfont icon-back"></i>
+							</div>
+							<div className="headerContent">消息</div>
+							<div className="icon"></div>
+						</div>
+					);
+				break;
 		}
 
 		return content;

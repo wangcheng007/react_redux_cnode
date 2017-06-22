@@ -49,3 +49,18 @@
 	height: 60px;
 	display: block;
 }
+
+.footer .footerNav .unread{
+	position: absolute;
+	background-color: white;
+	width: 20px;
+	height: 20px;
+	color: black;
+	font-weight: 600;
+	border-radius: 50%;
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	left: 63%;
+	bottom:35px;
+}
