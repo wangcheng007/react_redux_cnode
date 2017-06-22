@@ -16,6 +16,7 @@ class HeaderNav extends React.Component {
 					<HeaderList targetHeader="SHOW_SHARE">分享</HeaderList>
 					<HeaderList targetHeader="SHOW_ASK">问答</HeaderList>
 					<HeaderList targetHeader="SHOW_JOB">招聘</HeaderList>
+					<HeaderList targetHeader="SHOW_DEV">测试</HeaderList>
 				</ul>
 			</div>
 		)

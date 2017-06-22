@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Header from '../Header/index.jsx';
 import TabIcon from '../TabIcon/index.jsx';
 import { Tool } from '../../Tool.js';
@@ -30,7 +31,7 @@ class Article extends React.Component {
 						<div className="headimg"><img src={author.avatar_url} /></div>
 						<div className="topicinfo">
 							<div>
-								<span style={{fontSize:"20px"}}>{author.loginname}</span> &nbsp;&nbsp;
+								<Link style={{fontSize:"20px"}} to={'/user/' + author.loginname}>{author.loginname}</Link> &nbsp;&nbsp;
 								<span style={{fontSize:"16px"}}>{Tool.formatDate(create_at)}</span>
 							</div>
 							<div>

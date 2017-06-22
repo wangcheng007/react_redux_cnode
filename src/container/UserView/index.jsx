@@ -1,10 +1,12 @@
 import React from 'react';
-import './style.css';
+import { connect } from 'react-redux';
+import { Link } from "react-router";
 import Header from '../../component/Header/index.jsx';
 import { getUserView } from '../../data/userview/userview.js';
 import Loading from '../../component/Loading/index.jsx';
 import { Tool } from '../../Tool';
-import { Link } from "react-router";
+
+import './style.css';
 
 class UserView extends React.Component {
 	constructor(props){
@@ -48,6 +50,7 @@ class UserView extends React.Component {
 
 	render() {
 		let message;
+		const tit = this.props.loginname === this.props.params.loginname ? "": this.props.params.loginname;
 		if(this.state.loadMsg === false){
 			message = (
 				<div>
@@ -58,7 +61,7 @@ class UserView extends React.Component {
 		}else{
 			message = (
 				<div>
-					<Header target="personal"></Header>
+					<Header target="personal" tit={tit}></Header>
 					<div className="headerinfo">
 						<div className="headerinfoimg">
 							<img src={this.state.data.avatar_url} />
@@ -101,4 +104,17 @@ class UserView extends React.Component {
 	}
 }
 
-export default UserView;
+const mapStateToProps = (state) => {
+	return {
+		loginname: state.personalInfo.loginname
+	}
+}
+
+const mapDispatchToProps = (dispatch, getState) => {
+	return {}
+}
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(UserView);

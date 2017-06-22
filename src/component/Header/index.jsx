@@ -1,6 +1,6 @@
 import React from "react";
 import {
-	browserHistory
+	hashHistory
 } from "react-router";
 import './style.css';
 
@@ -21,7 +21,7 @@ class Header extends React.Component {
 			case "xiangqing":
 				content = (
 					<div className="header">
-						<div className="icon" onClick={browserHistory.goBack}>
+						<div className="icon" onClick={hashHistory.goBack}>
 							<i className="iconfont icon-back"></i>
 						</div>
 						<div className="headerContent">详情</div>
@@ -32,7 +32,7 @@ class Header extends React.Component {
 			case "login":
 				content = (
 					<div className="header">
-						<div className="icon" onClick={browserHistory.goBack}>
+						<div className="icon" onClick={hashHistory.goBack}>
 							<i className="iconfont icon-back"></i>
 						</div>
 						<div className="headerContent">登录</div>
@@ -41,27 +41,50 @@ class Header extends React.Component {
 					);
 				break;
 			case "personal":
-				content = (
-					<div className="header">
-						<div className="icon"></div>
-						<div className="headerContent">个人中心</div>
-						<div className="icon" onClick={this.signOut.bind(this)}>
-							<i className="iconfont icon-kaiguan"></i>
+				if(this.props.tit === ""){
+					content = (
+						<div className="header">
+							<div className="icon"></div>
+							<div className="headerContent">个人中心</div>
+							<div className="icon" onClick={this.signOut.bind(this)}>
+								<i className="iconfont icon-kaiguan"></i>
+							</div>
 						</div>
-					</div>
 					);
+				}else{
+					content = (
+						<div className="header">
+							<div className="icon" onClick={hashHistory.goBack}>
+								<i className="iconfont icon-back"></i>
+							</div>
+							<div className="headerContent">{this.props.tit}个人中心</div>
+							<div className="icon"></div>
+						</div>
+					);
+				}
 				break;
 				case "signout":
 					content = (
 						<div className="header">
-							<div className="icon" onClick={browserHistory.goBack}>
+							<div className="icon" onClick={hashHistory.goBack}>
 								<i className="iconfont icon-back"></i>
 							</div>
 							<div className="headerContent">退出</div>
 							<div className="icon"></div>
 						</div>
-						);
-					break;
+					);
+				break;
+				case "published":
+					content=(
+						<div className="header">
+							<div className="icon" onClick={hashHistory.goBack}>
+								<i className="iconfont icon-back"></i>
+							</div>
+							<div className="headerContent">发表主题</div>
+							<div className="icon"></div>
+						</div>
+					);
+				break;
 		}
 
 		return content;

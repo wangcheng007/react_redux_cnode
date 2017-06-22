@@ -4,6 +4,7 @@ import {
 	IndexRoute,
 	Router,
 	browserHistory,
+	hashHistory,
 	applyRouterMiddleware
 } from "react-router";
 import {
@@ -11,15 +12,15 @@ import {
 } from 'react-router-scroll';
 import FooterNav from "../src/component/FooterNav/index.jsx";
 import App from "../src/component/App/index.jsx";
-import Published from "../src/component/Published/Published";
-import Message from "../src/component/Message/Message";
+import Published from "../src/container/Published/index.jsx";
+import Message from "../src/container/Message/Message";
 import UserInfo from "../src/container/UserInfo/index.jsx";
 import TopicDetail from "../src/container/TopicDetail/index.jsx";
 import UserView from "../src/container/UserView/index.jsx";
 import Signout from "../src/container/Signout/index.jsx";
 
 export const routeConfig = (
-	<Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
+	<Router history={hashHistory} render={applyRouterMiddleware(useScroll())}>
 		<Route path="/" component={FooterNav}>
 			<IndexRoute component={App}></IndexRoute>
 			<Route path="published" component={Published}></Route>

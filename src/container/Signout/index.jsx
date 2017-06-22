@@ -3,7 +3,7 @@ import Header from '../../component/Header/index.jsx';
 import './style.css';
 import { signout } from "../../action/signout.js";
 import { connect } from 'react-redux';
-import { browserHistory } from "react-router";
+import { hashHistory } from "react-router";
 
 class Signout extends React.Component {
 	constructor(props){
@@ -12,7 +12,7 @@ class Signout extends React.Component {
 
 	signOut(){
 		this.props.signout();
-		browserHistory.push('/personal');
+		hashHistory.push('/personal');
 	}
 
 	render() {

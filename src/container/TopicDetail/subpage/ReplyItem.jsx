@@ -1,5 +1,5 @@
 import React from "react";
-import { browserHistory } from 'react-router';
+import { hashHistory,Link } from 'react-router';
 import { Tool } from '../../../Tool.js';
 import { dianzanData } from '../../../data/dianzan/dianzan.js';
 import { getTopicDetail } from '../../../data/topicdetail/topicdetail.js';
@@ -18,7 +18,7 @@ class ReplyItem extends React.Component {
 	dianzan(index){
 		if(!this.props.accesstoken){
 			alert("请先登录！！！");
-			browserHistory.push('/personal');
+			hashHistory.push('/personal');
 			return ;
 		}
 		if(this.props.loginname === this.props.author.loginname){
@@ -54,7 +54,7 @@ class ReplyItem extends React.Component {
 	reply(){
 		if(!this.props.accesstoken){
 			alert("请先登录！！！");
-			browserHistory.push('/personal');
+			hashHistory.push('/personal');
 			return ;
 		}
 
@@ -70,11 +70,9 @@ class ReplyItem extends React.Component {
 	}
 
 	replySubmit(id){
-		let replycontent = this.refs.content;
-
 		const paramsObj = {
 			accesstoken: this.props.accesstoken,
-			content: replycontent.value,
+			content: `[@${this.props.author.loginname}](#/user/${this.props.author.loginname}) ${this.refs.content.value}`,
 			reply_id: id
 		}
 
@@ -113,6 +111,7 @@ class ReplyItem extends React.Component {
 			id,
 			ups
 		} = this.props;
+
 		const isUp = this.isUp(ups);
 
 		return (
@@ -126,7 +125,7 @@ class ReplyItem extends React.Component {
 					</div>
 					<div className="replayinfo">
 						<div className="replayername">
-							<span>{author.loginname}</span> &nbsp;&nbsp;
+							<Link to={'/user/' + author.loginname}>{author.loginname}</Link> &nbsp;&nbsp;
 							<span>{Tool.formatDate(create_at)}</span>
 						</div>
 						<div className="replaycontent markdown-body" dangerouslySetInnerHTML={{__html:  content}}>

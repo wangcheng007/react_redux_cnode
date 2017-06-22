@@ -70,6 +70,9 @@ class List extends React.Component {
 			case "SHOW_JOB":
 				tabName = "job";
 				break;
+			case "SHOW_DEV":
+				tabName = "dev";
+				break;
 			default:
 				break;
 		}

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { login } from "../../action/login.js";
 import Header from '../../component/Header/index.jsx';
 import { loginData } from '../../data/login/login.js';
-import { browserHistory } from "react-router";
+import { hashHistory } from "react-router";
 
 class UserInfo extends React.Component {
 	constructor(props){
@@ -33,7 +33,7 @@ class UserInfo extends React.Component {
 	render() {
 		let message;
 		if(this.props.loginname){
-			browserHistory.push('/user/' + this.props.loginname);
+			hashHistory.push('/user/' + this.props.loginname);
 			message = <div></div>
 		}else{
 			message = (
