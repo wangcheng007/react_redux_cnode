@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "scripts": {
+    "start": "set NODE_ENV=dev && webpack-dev-server --progress --colors",
+    "build": "rm -rf ./build && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --colors"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "es6-promise": "^4.1.0",
-    "file-loader": "^0.11.1",
-    "github-markdown-css": "^2.6.0",
-    "react-router-scroll": "^0.4.2",
-    "reactjs-iscroll": "^0.3.2",
-    "redux-logger": "^3.0.1",
-    "url-loader": "^0.5.8",
-    "whatwg-fetch": "^2.0.3"
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^2.0.0",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
@@ -23,27 +28,19 @@
     "css-loader": "^0.26.4",
     "css3transform-react": "^0.1.0",
     "express": "^4.15.2",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "^0.11.1",
     "flux": "^3.1.2",
-    "iscroll": "^5.2.0",
+    "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",
-    "markdown": "^0.5.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "react-router": "^2.0.0",
-    "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0",
+    "open-browser-webpack-plugin": "0.0.2",
+    "postcss-loader": "^2.0.6",
+    "react-router-scroll": "^0.4.2",
     "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-hot-middleware": "^2.17.1"
-  },
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server --hot"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }

@@ -5,15 +5,14 @@ import {
 } from 'react-redux';
 import {
 	routeConfig
-} from "./config/routeConfig";
+} from "../config/routeConfig";
 import {
 	store
-} from "./config/storeConfig.js";
-import './src/iconfont/index.css';
-import 'github-markdown-css';
-import './src/iconfont/iconfont.css';
+} from "../config/storeConfig.js";
+import './iconfont/index.css';
+import './iconfont/iconfont.css';
 
-const rootEL = document.getElementById('content');
+const rootEL = document.getElementById('root');
 ReactDOM.render(
 	<Provider store={store}>
 		{routeConfig}
