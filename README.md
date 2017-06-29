@@ -89,11 +89,19 @@
 * 项目部署问题，可以参考我稍后时间更的博客，[博客地址](https://wangcheng007.github.io/)
 
 ### 项目截图  
-![首页](http://qiniu-chrome.qiniudn.com/shouye.png)  
-![详情页](http://qiniu-chrome.qiniudn.com/xiangqingye_1.png)   
-![评论列表](http://qiniu-chrome.qiniudn.com/xiangiqngye_2.png) 
-![未登录](http://qiniu-chrome.qiniudn.com/unlogined.png)  
-![登录](http://qiniu-chrome.qiniudn.com/login.png)  
-![消息列表](http://qiniu-chrome.qiniudn.com/message.png)  
-![发布](http://qiniu-chrome.qiniudn.com/published.png)  
-![个人信息](http://qiniu-chrome.qiniudn.com/userview.png)
+##### 首页
+![首页](http://on3r0omz6.bkt.clouddn.com/shouye.png)  
+##### 详情页
+![详情页](http://on3r0omz6.bkt.clouddn.com/xiangqingye_1.png) 
+##### 评论列表
+![评论列表](http://on3r0omz6.bkt.clouddn.com/xiangiqngye_2.png)  
+##### 未登录
+![未登录](http://on3r0omz6.bkt.clouddn.com/unlogined.png)  
+##### 登录
+![登录](http://on3r0omz6.bkt.clouddn.com/login.png)  
+##### 消息列表
+![消息列表](http://on3r0omz6.bkt.clouddn.com/message.png)  
+##### 发布
+![发布](http://on3r0omz6.bkt.clouddn.com/published.png)  
+##### 个人信息
+![个人信息](http://on3r0omz6.bkt.clouddn.com/userview.png)
