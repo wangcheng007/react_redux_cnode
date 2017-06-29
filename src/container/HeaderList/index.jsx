@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import HeaderNavUnit from "../../component/HeaderNavUnit/index.jsx";
+import HeaderNavUnit from "../../component/HeaderNav/HeaderNavUnit.jsx";
 import { chooseHeader } from "../../action/chooseHeader.js";
 
 const mapStateToProps = (state, ownPros) => {

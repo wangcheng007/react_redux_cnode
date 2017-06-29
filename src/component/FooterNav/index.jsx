@@ -1,5 +1,5 @@
 import React from "react";
-import FooterUnit from "../FooterUnit/index.jsx";
+import FooterUnit from "./FooterUnit.jsx";
 import { connect } from 'react-redux';
 import { getUnreadMessage } from '../../data/message/message.js';
 import "./style.css";
