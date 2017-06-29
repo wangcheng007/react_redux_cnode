@@ -1,24 +1,24 @@
-#react-redux-cnode 
->这是一个基于react全家桶的cnode社区webapp，主要包括react、redux、react-redux、react-router、webpack、flex。  
+# react-redux-cnode 
+> 这是一个基于react全家桶的cnode社区webapp，主要包括react、redux、react-redux、react-router、webpack、flex。  
 
->个人博客：[我爱吃包子的博客](http://wangcheng007.github.io/)  
+> 个人博客：[我爱吃包子的博客](http://wangcheng007.github.io/)  
 
->项目github地址：[react-redux-cnode](https://github.com/wangcheng007/react_redux_cnode)
+> 项目github地址：[react-redux-cnode](https://github.com/wangcheng007/react_redux_cnode)
 
->如果对你有帮助的话，希望得到你的star。
+> 如果对你有帮助的话，希望得到你的star。
 
-##demo
-####[在线预览](http://39.108.127.98:8888)
-##下载
+## demo  
+#### [在线预览](http://39.108.127.98:8888)
+## 下载
 		git clone https://github.com/wangcheng007/react_redux_cnode.git
 		cd react_redux_cnode/
 		npm install(安装依赖模块)
 
 	
-##运行
+## 运行
 		npm run start (开发版本访问：http://localhost:3000/)
 		npm run build (打包发布)
-##功能
+## 功能
 1.登录退出  
 2.分类查看  
 3.首页滚动到底部加载更多  
@@ -28,7 +28,8 @@
 7.查看个人信息、查看其他用户主页  
 8.我的消息  
 
-##目录结构
+## 目录结构  
+
 	|-- config								  	//路由、 redux store文件夹 
 	|		|--routerConfig.js				  	//路由
 	|		|--storeConfig.js				  	//redux store  
@@ -79,13 +80,15 @@
 	|		|--index.html						
 	|		|--index.js							//入口文件
 	|		|--Tool.js 							//共用方法
-###总结
+
+
+### 总结
 * ui是借鉴的[狼族小狈的cnode社区ui](https://github.com/lzxb/react-cnode)，非常感谢。
 * 自己做开发前没有认真想过目录结构，导致结构混乱，然后推到重来了一遍。
 * 异步请求数据问题，原来是按照官方文档，通过两种action来请求。后发现这种是在是太烦，在网上搜索发现现在的方法。
 * 项目部署问题，可以参考我稍后时间更的博客，[博客地址](https://wangcheng007.github.io/)
 
-###项目截图
+### 项目截图
 ![首页][http://qiniu-chrome.qiniudn.com/shouye.png]  
 ![详情页][http://qiniu-chrome.qiniudn.com/xiangqingye_1.png]  
 ![评论列表][http://qiniu-chrome.qiniudn.com/xiangiqngye_2.png] 
