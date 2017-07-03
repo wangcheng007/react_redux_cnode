@@ -16,7 +16,7 @@ class FooterUnit extends React.Component {
 				<li>
 					<IndexLink to="/" activeStyle={{backgroundColor: 'red'}}>
 						<i className={'iconfont icon-' + this.props.targetTo}></i>
-						<a>{this.props.children}</a>
+						{this.props.children}
 					</IndexLink>
 				</li>
 			)
@@ -26,7 +26,7 @@ class FooterUnit extends React.Component {
 					<li>
 						<Link to={to} activeStyle={{backgroundColor: 'red'}}>
 							<i className={'iconfont icon-' + this.props.targetTo}></i>
-							<a>{this.props.children}</a>
+							{this.props.children}
 						</Link>
 					</li>
 				)
@@ -36,7 +36,7 @@ class FooterUnit extends React.Component {
 						<Link to={to} activeStyle={{backgroundColor: 'red'}}>
 							<i className={'iconfont icon-' + this.props.targetTo}></i>
 							<div className="unread">{this.props.unread == 0?"":this.props.unread}</div>
-							<a>{this.props.children}</a>
+							{this.props.children}
 						</Link>
 					</li>
 				)
@@ -46,7 +46,7 @@ class FooterUnit extends React.Component {
 				<li>
 					<Link to={to} activeStyle={{backgroundColor: 'red'}}>
 						<i className={'iconfont icon-' + this.props.targetTo}></i>
-						<a>{this.props.children}</a>
+						{this.props.children}
 					</Link>
 				</li>
 			)

@@ -27,14 +27,14 @@ class UserInfo extends React.Component {
 			return res.json();
 		}).then((json) => {
 			this.props.login(json.loginname, json.id, accesstoken);
+			hashHistory.push('/user/' + this.props.loginname);
 		});
 	}
 
 	render() {
 		let message;
 		if(this.props.loginname){
-			hashHistory.push('/user/' + this.props.loginname);
-			message = <div></div>
+			return(<div></div>);
 		}else{
 			message = (
 				<div>
