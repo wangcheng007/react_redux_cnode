@@ -3,6 +3,7 @@ var path = require('path')
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
 	entry: {
@@ -16,30 +17,32 @@ module.exports = {
 	},
 
 	module: {
-		loaders: [{
+		rules: [{
 			test: /\.(js|jsx)$/,
 			exclude: /node_modules/,
-			loader: 'babel-loader'
-		}, {
-			test: /\.less$/,
-			exclude: /node_modules/,
-			loader: ExtractTextPlugin.extract({
-				fallbackLoader: 'style-loader',
-				loader: 'css-loader!less-loader'
-			})
+			use: ['babel-loader']
 		}, {
 			test: /\.css$/,
 			exclude: /node_modules/,
-			loader: ExtractTextPlugin.extract({
+			use: ExtractTextPlugin.extract({
 				fallbackLoader: 'style-loader',
-				loader: 'css-loader'
+				use: ['css-loader', 'postcss-loader']
 			})
 		}, {
-			test: /\.(png|gif|jpg|jpeg|bmp)$/i,
-			loader: 'url-loader?limit=5000&name=img/[name].[chunkhash:8].[ext]'
+			test: /\.less$/,
+			exclude: /node_modules/,
+			use: ExtractTextPlugin.extract({
+				fallbackLoader: 'style-loader',
+				use: ['css-loader', 'postcss-loader', 'less-loader']
+			})
 		}, {
-			test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
-			loader: 'file-loader?limit=5000&name=fonts/[name].[ext]'
+			test: /\.(png|gif|jpg|jpeg|bmp)$/,
+			exclude: /node_modules/,
+			use: ['url-loader?limit=5000&name=img/[name].[chunkhash:8].[ext]']
+		}, {
+			test: /\.(woff|woff2|svg|eot|ttf)$/,
+			exclude: /node_modules/,
+			use: ['url-loader?limit=5000&name=/fonts/[name].[ext]']
 		}]
 	},
 
@@ -47,6 +50,13 @@ module.exports = {
 		// webpack 内置的 banner-plugin
 		new webpack.BannerPlugin("Copyright by wangcheng007@github.com."),
 
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				postcss: function() {
+					return [autoprefixer]
+				}
+			}
+		}),
 		// html 模板插件
 		new HtmlWebpackPlugin({
 			template: __dirname + '/src/index.html'
